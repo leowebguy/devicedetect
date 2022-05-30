@@ -1,0 +1,59 @@
+{
+    "name": "leowebguy/device-detect",
+    "description": "Minimal craft plugin for detecting mobile devices and more",
+    "keywords": [
+        "mobile",
+        "detect",
+        "devices",
+        "tablets",
+        "android",
+        "iphone"
+    ],
+    "version": "1.0.0",
+    "type": "craft-plugin",
+    "authors": [
+        {
+            "name": "Leo",
+            "homepage": "https://github.com/leowebguy"
+        }
+    ],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "craftcms/cms": "^3.0|^4.0",
+        "mobiledetect/mobiledetectlib": "^2.8"
+    },
+    "require-dev": {
+        "craftcms/ecs": "dev-main",
+        "craftcms/phpstan": "dev-main",
+        "craftcms/rector": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "leowebguy\\devicedetect\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "DeviceDetect",
+        "handle": "device-detect",
+        "schemaVersion": "1.0.0",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "class": "leowebguy\\devicedetect\\DeviceDetect"
+    },
+    "config": {
+        "platform": {
+            "php": "8.0.2"
+        },
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "craftcms/plugin-installer": true
+        }
+    },
+    "scripts": {
+        "check-cs": "ecs check --ansi",
+        "fix-cs": "ecs check --ansi --fix",
+        "phpstan": "phpstan --memory-limit=1G"
+    }
+}
