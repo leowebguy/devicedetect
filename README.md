@@ -17,7 +17,7 @@ cd /path/to/project
 Then tell composer to load the plugin:
 
 ```bash
-composer require leowebguy/mobile-detect
+composer require leowebguy/device-detect
 ```
 
 In the Control Panel, go to Settings → Plugins and click the “Install” button for Device Detect.
@@ -40,7 +40,7 @@ _Detects all mobile devices, both phones and tablets_
 {{ craft.deviceDetect.isMobile }}
 ```
 
-_Detects specific mobile devices, either phones or tablets_
+_Detects specific devices, either phones or tablets_
 
 ```twig
 {{ craft.deviceDetect.isTablet }}
