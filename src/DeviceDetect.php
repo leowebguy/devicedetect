@@ -1,8 +1,11 @@
 <?php
 /**
- * Device Detect Plugin for Craft 3/4.
+ * Minimal craft plugin for detecting mobile devices and more
  *
- * @author Leo Leoncio
+ * @author     Leo Leoncio
+ * @see        https://github.com/leowebguy
+ * @copyright  Copyright (c) 2021, leowebguy
+ * @license    MIT
  */
 
 namespace leowebguy\devicedetect;
@@ -15,18 +18,24 @@ use yii\base\Event;
 
 class DeviceDetect extends Plugin
 {
+    // Properties
+    // =========================================================================
+
     public static $plugin;
 
-    /**
-     * init.
-     *
-     * @return void
-     */
+    // Public Methods
+    // =========================================================================
+
     public function init()
     {
         parent::init();
         self::$plugin = $this;
 
+        if (!$this->isInstalled) {
+            return;
+        }
+
+        // Craft var
         Event::on(
             CraftVariable::class,
             CraftVariable::EVENT_INIT,
@@ -37,12 +46,9 @@ class DeviceDetect extends Plugin
             }
         );
 
+        // log info
         Craft::info(
-            Craft::t(
-                'device-detect',
-                '{name} plugin loaded',
-                ['name' => $this->name]
-            ),
+            'Device Detect plugin loaded',
             __METHOD__
         );
     }

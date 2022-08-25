@@ -1,13 +1,16 @@
 <?php
 /**
- * Device Detect Plugin for Craft 3/4.
+ * Minimal craft plugin for detecting mobile devices and more
  *
- * @author Leo Leoncio
+ * @author     Leo Leoncio
+ * @see        https://github.com/leowebguy
+ * @copyright  Copyright (c) 2021, leowebguy
+ * @license    MIT
  */
 
 namespace leowebguy\devicedetect\variables;
 
-use Detection\MobileDetect as MobileDetectLib;
+use Detection\MobileDetect;
 
 /**
  * MobileDetectVariable
@@ -28,7 +31,7 @@ class DeviceDetectVariable
     public function getDeviceDetect()
     {
         if ($this->_deviceDetect === null) {
-            $this->_deviceDetect = new MobileDetectLib();
+            $this->_deviceDetect = new MobileDetect();
         }
 
         return $this->_deviceDetect;

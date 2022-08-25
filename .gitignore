@@ -1,18 +1,16 @@
-# composer/npm
-composer.lock
-vendor
-package-lock.json
-node_modules
+/vendor
+/composer.lock
+/node_modules
+/package-lock.json
 
 # thumbnails
 ._*
 
 # misc
-.idea
-.vscode
 .sass-cache
 .cache
 .php_cs.cache
+ecs.php
 .DS_Store
 .project
 .settings
@@ -23,3 +21,7 @@ node_modules
 *.tmproject
 config.codekit3
 prepros-6.config
+
+# ide
+.idea
+.vscode

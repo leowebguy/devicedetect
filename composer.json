@@ -9,15 +9,15 @@
         "android",
         "iphone"
     ],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "type": "craft-plugin",
+    "license": "MIT",
     "authors": [
         {
             "name": "Leo",
             "homepage": "https://github.com/leowebguy"
         }
     ],
-    "license": "MIT",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
@@ -52,8 +52,8 @@
         }
     },
     "scripts": {
-        "check-cs": "ecs check --ansi",
-        "fix-cs": "ecs check --ansi --fix",
-        "phpstan": "phpstan --memory-limit=1G"
+        "check-cs": "vendor/bin/ecs check src --ansi",
+        "fix-cs": "vendor/bin/ecs check src --ansi --fix",
+        "phpstan": "vendor/bin/phpstan analyse src"
     }
 }
