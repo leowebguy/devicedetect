@@ -1,8 +1,8 @@
 # Device Detect plugin for Craft
 
-Minimal craft plugin for detecting mobile devices and more
+### Detect devices, OS, bots and more
 
-_Wrapper for the [MobileDetect](http://mobiledetect.net/) library by [@serbanghita](https://github.com/serbanghita)_
+_Wrapper around [MobileDetect](http://mobiledetect.net/) by [@serbanghita](https://github.com/serbanghita)_
 
 ---
 
@@ -34,30 +34,34 @@ The plugin exposes most of MobileDetect's methods, and can be used in your Twig:
 
 ### Methods
 
-_Detects all mobile devices, both phones and tablets_
+Devices
 
 ```twig
 {{ craft.deviceDetect.isMobile }}
-```
-
-_Detects specific devices, either phones or tablets_
-
-```twig
 {{ craft.deviceDetect.isTablet }}
+{{ craft.deviceDetect.isiPad }}
 {{ craft.deviceDetect.isPhone }}
 ```
 
-### Other methods
-
-_Detects specific OS_
+OS
 
 ```twig
 {{ craft.deviceDetect.isiOS }}
+{{ craft.deviceDetect.isiPadOS }}
 {{ craft.deviceDetect.isAndroidOS }}
 ```
 
-_Detects user agent_
+Bots
+
+```twig
+{{ craft.deviceDetect.isBot }}
+{{ craft.deviceDetect.isMobileBot }}
+```
+
+User agent
 
 ```twig
 {{ craft.deviceDetect.getUserAgent }}
 ```
+
+getUserAgent returns string i.e. _Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36_

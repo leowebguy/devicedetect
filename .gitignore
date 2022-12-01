@@ -1,7 +1,7 @@
-/vendor
-/composer.lock
-/node_modules
-/package-lock.json
+vendor
+composer.lock
+node_modules
+package-lock.json
 
 # thumbnails
 ._*
@@ -21,7 +21,5 @@ ecs.php
 *.tmproject
 config.codekit3
 prepros-6.config
-
-# ide
 .idea
 .vscode

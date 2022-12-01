@@ -1,6 +1,6 @@
 <?php
 /**
- * Minimal craft plugin for detecting mobile devices and more
+ * Craft plugin for detecting devices, OS, bots and more
  *
  * @author     Leo Leoncio
  * @see        https://github.com/leowebguy
@@ -35,7 +35,9 @@ class DeviceDetect extends Plugin
             return;
         }
 
-        // Craft var
+        /**
+         * Craft Variable
+         */
         Event::on(
             CraftVariable::class,
             CraftVariable::EVENT_INIT,
@@ -46,7 +48,9 @@ class DeviceDetect extends Plugin
             }
         );
 
-        // log info
+        /**
+         * Log info
+         */
         Craft::info(
             'Device Detect plugin loaded',
             __METHOD__

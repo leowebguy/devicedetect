@@ -1,6 +1,6 @@
 <?php
 /**
- * Minimal craft plugin for detecting mobile devices and more
+ * Craft plugin for detecting devices, OS, bots and more
  *
  * @author     Leo Leoncio
  * @see        https://github.com/leowebguy
@@ -12,88 +12,113 @@ namespace leowebguy\devicedetect\variables;
 
 use Detection\MobileDetect;
 
-/**
- * MobileDetectVariable
- */
 class DeviceDetectVariable
 {
     // Private Properties
     // =========================================================================
 
-    private $_deviceDetect;
+    /**
+     * @var MobileDetect
+     */
+    private MobileDetect $deviceDetect;
 
-    // Public Methods
+    // Construct
+    // =========================================================================
+
+    public function __construct()
+    {
+        $this->deviceDetect = new MobileDetect();
+    }
+
+    // Devices
     // =========================================================================
 
     /**
-     * @return \Mobile_Detect|null
-     */
-    public function getDeviceDetect()
-    {
-        if ($this->_deviceDetect === null) {
-            $this->_deviceDetect = new MobileDetect();
-        }
-
-        return $this->_deviceDetect;
-    }
-
-    /**
-     * Returns true for any mobile device (including tablets!)
-     *
      * @return bool
      */
     public function isMobile(): bool
     {
-        return $this->getDeviceDetect()->isMobile();
+        return $this->deviceDetect->isMobile();
     }
 
     /**
-     * Returns true for tablets only
-     *
      * @return bool
      */
     public function isTablet(): bool
     {
-        return $this->getDeviceDetect()->isTablet();
+        return $this->deviceDetect->isTablet();
     }
 
     /**
-     * Returns true for phones only
-     *
+     * @return bool
+     */
+    public function isiPad(): bool
+    {
+        return $this->deviceDetect->isiPad();
+    }
+
+    /**
      * @return bool
      */
     public function isPhone(): bool
     {
-        return $this->getDeviceDetect()->isMobile() && !$this->getDeviceDetect()->isTablet();
+        return $this->deviceDetect->isMobile() && !$this->deviceDetect->isTablet();
     }
 
+    // OS
+    // =========================================================================
+
     /**
-     * Returns true for iOS
-     *
-     * @return mixed
+     * @return bool
      */
     public function isiOS(): bool
     {
-        return $this->getDeviceDetect()->isiOS();
+        return $this->deviceDetect->isiOS();
     }
 
     /**
-     * Returns true for Android
-     *
-     * @return mixed
+     * @return bool
+     */
+    public function isiPadOS(): bool
+    {
+        return $this->deviceDetect->isiPadOS();
+    }
+
+    /**
+     * @return bool
      */
     public function isAndroidOS(): bool
     {
-        return $this->getDeviceDetect()->isAndroidOS();
+        return $this->deviceDetect->isAndroidOS();
+    }
+
+    // Bots/Crawlers
+    // =========================================================================
+
+    /**
+     * @return bool
+     */
+    public function isBot(): bool
+    {
+        return $this->deviceDetect->isBot();
     }
 
     /**
-     * Get user agent
-     *
-     * @return null|string
+     * @return bool
      */
-    public function getUserAgent()
+    public function isMobileBot(): bool
     {
-        return $this->getDeviceDetect()->getUserAgent();
+        return $this->deviceDetect->isMobileBot();
+    }
+
+    // Custom
+    // =========================================================================
+
+    /**
+     * @return string|null
+     */
+    public function getUserAgent(): ?string
+    {
+        return $this->deviceDetect->getUserAgent();
     }
 }
