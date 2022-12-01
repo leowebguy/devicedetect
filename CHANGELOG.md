@@ -3,8 +3,8 @@
 All notable changes to this project will be documented in this file.
 
 ## 2.0.0 - 2022.11.30
-### Add more methods
-- New methods: isiPad, isiPadOS, isIE, isEdge, isFirefox, isSafari, isChrome, isBot, isMobileBot
+### Add additional methods
+- New methods: isiPad, isiPadOS, isBot, isMobileBot
 
 ## 1.0.1 - 2022.08.24
 ### C4 Cleanup
