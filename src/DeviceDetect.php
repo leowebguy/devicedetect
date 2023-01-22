@@ -18,18 +18,12 @@ use yii\base\Event;
 
 class DeviceDetect extends Plugin
 {
-    // Properties
-    // =========================================================================
-
-    public static $plugin;
-
     // Public Methods
     // =========================================================================
 
     public function init()
     {
         parent::init();
-        self::$plugin = $this;
 
         if (!$this->isInstalled) {
             return;

@@ -14,7 +14,7 @@ use Detection\MobileDetect;
 
 class DeviceDetectVariable
 {
-    // Private Properties
+    // Properties
     // =========================================================================
 
     /**
