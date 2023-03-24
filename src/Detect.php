@@ -13,10 +13,10 @@ namespace leowebguy\devicedetect;
 use Craft;
 use craft\base\Plugin;
 use craft\web\twig\variables\CraftVariable;
-use leowebguy\devicedetect\variables\DeviceDetectVariable;
+use leowebguy\devicedetect\variables\DetectVariable;
 use yii\base\Event;
 
-class DeviceDetect extends Plugin
+class Detect extends Plugin
 {
     // Properties
     // =========================================================================
@@ -42,7 +42,7 @@ class DeviceDetect extends Plugin
             function (Event $event) {
                 /** @var CraftVariable $variable */
                 $variable = $event->sender;
-                $variable->set('deviceDetect', DeviceDetectVariable::class);
+                $variable->set('deviceDetect', DetectVariable::class);
             }
         );
 

@@ -39,7 +39,7 @@
     "extra": {
         "name": "Device Detect",
         "handle": "device-detect",
-        "class": "leowebguy\\devicedetect\\DeviceDetect"
+        "class": "leowebguy\\devicedetect\\Detect"
     },
     "config": {
         "platform": {

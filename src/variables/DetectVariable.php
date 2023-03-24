@@ -12,14 +12,11 @@ namespace leowebguy\devicedetect\variables;
 
 use Detection\MobileDetect;
 
-class DeviceDetectVariable
+class DetectVariable
 {
     // Properties
     // =========================================================================
 
-    /**
-     * @var MobileDetect
-     */
     private MobileDetect $deviceDetect;
 
     // Construct
