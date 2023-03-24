@@ -18,6 +18,13 @@ use yii\base\Event;
 
 class DeviceDetect extends Plugin
 {
+    // Properties
+    // =========================================================================
+
+    public bool $hasCpSection = false;
+
+    public bool $hasCpSettings = false;
+
     // Public Methods
     // =========================================================================
 
@@ -29,9 +36,6 @@ class DeviceDetect extends Plugin
             return;
         }
 
-        /**
-         * Craft Variable
-         */
         Event::on(
             CraftVariable::class,
             CraftVariable::EVENT_INIT,
@@ -42,9 +46,6 @@ class DeviceDetect extends Plugin
             }
         );
 
-        /**
-         * Log info
-         */
         Craft::info(
             'Device Detect plugin loaded',
             __METHOD__
