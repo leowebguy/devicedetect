@@ -4,8 +4,7 @@
  *
  * @author     Leo Leoncio
  * @see        https://github.com/leowebguy
- * @copyright  Copyright (c) 2021, leowebguy
- * @license    MIT
+ * @copyright  Copyright (c) 2024, leowebguy
  */
 
 namespace leowebguy\devicedetect\variables;
@@ -14,17 +13,11 @@ use Detection\MobileDetect;
 
 class DetectVariable
 {
-    // Properties
-    // =========================================================================
-
     private MobileDetect $deviceDetect;
-
-    // Construct
-    // =========================================================================
 
     public function __construct()
     {
-        $this->deviceDetect = new MobileDetect();
+        $this->deviceDetect = new MobileDetect;
     }
 
     // Devices

@@ -4,8 +4,7 @@
  *
  * @author     Leo Leoncio
  * @see        https://github.com/leowebguy
- * @copyright  Copyright (c) 2021, leowebguy
- * @license    MIT
+ * @copyright  Copyright (c) 2024, leowebguy
  */
 
 namespace leowebguy\devicedetect;
@@ -18,15 +17,9 @@ use yii\base\Event;
 
 class Detect extends Plugin
 {
-    // Properties
-    // =========================================================================
-
     public bool $hasCpSection = false;
 
     public bool $hasCpSettings = false;
-
-    // Public Methods
-    // =========================================================================
 
     public function init()
     {
@@ -39,7 +32,7 @@ class Detect extends Plugin
         Event::on(
             CraftVariable::class,
             CraftVariable::EVENT_INIT,
-            function (Event $event) {
+            function(Event $event) {
                 /** @var CraftVariable $variable */
                 $variable = $event->sender;
                 $variable->set('deviceDetect', DetectVariable::class);
