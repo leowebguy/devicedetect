@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Craft plugin for detecting devices, OS, bots and more
  *
@@ -18,15 +19,15 @@ class DetectVariable
 
     public function __construct()
     {
-        $this->deviceDetect = new MobileDetect;
+        $this->deviceDetect = new MobileDetect();
     }
 
     // Devices
     // =========================================================================
 
     /**
-     * @return bool
      * @throws MobileDetectException
+     * @return bool
      */
     public function isMobile(): bool
     {
@@ -34,8 +35,8 @@ class DetectVariable
     }
 
     /**
-     * @return bool
      * @throws MobileDetectException
+     * @return bool
      */
     public function isTablet(): bool
     {
@@ -51,8 +52,8 @@ class DetectVariable
     }
 
     /**
-     * @return bool
      * @throws MobileDetectException
+     * @return bool
      */
     public function isPhone(): bool
     {

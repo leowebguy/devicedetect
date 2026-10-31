@@ -10,27 +10,27 @@
         "iphone",
         "browsers"
     ],
-    "version": "3.1",
+    "version": "3.2.0",
     "type": "craft-plugin",
     "license": "proprietary",
     "authors": [
         {
-            "name": "Leo",
+            "name": "Leo Leoncio",
             "homepage": "https://github.com/leowebguy"
         }
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^8.2",
-        "craftcms/cms": "^5.0",
+        "php": "^8.2 || ^8.3 || ^8.4 || ^8.5",
+        "craftcms/cms": "^5.0.0",
         "mobiledetect/mobiledetectlib": "^4.8"
     },
     "require-dev": {
         "craftcms/ecs": "dev-main",
         "craftcms/phpstan": "dev-main",
         "craftcms/rector": "dev-main",
-        "laravel/pint": "^1.14.0"
+        "laravel/pint": "^1.14"
     },
     "autoload": {
         "psr-4": {
@@ -40,6 +40,9 @@
     "extra": {
         "name": "Device Detect",
         "handle": "device-detect",
+        "developer": "Leo Leoncio",
+        "developerUrl": "https://github.com/leowebguy",
+        "documentationUrl": "https://github.com/leowebguy/craft-device-detect/blob/main/README.md",
         "class": "leowebguy\\devicedetect\\Detect"
     },
     "config": {
@@ -54,8 +57,10 @@
     "scripts": {
         "check-cs": "vendor/bin/ecs check src --ansi",
         "fix-cs": "vendor/bin/ecs check src --ansi --fix",
-        "phpstan": "vendor/bin/phpstan analyse src",
+        "phpstan": "vendor/bin/phpstan analyse",
+        "stan": "vendor/bin/phpstan analyse",
         "rector": "vendor/bin/rector process src --config vendor/craftcms/rector/sets/craft-cms-50.php",
-        "pint": "vendor/bin/pint -v src"
+        "pint": "vendor/bin/pint -v src",
+        "pint-test": "vendor/bin/pint --test -v src"
     }
 }
