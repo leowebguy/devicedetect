@@ -36,7 +36,7 @@ class Detect extends Plugin
         Event::on(
             CraftVariable::class,
             CraftVariable::EVENT_INIT,
-            static function (Event $event): void {
+            static function(Event $event): void {
                 /** @var CraftVariable $variable */
                 $variable = $event->sender;
                 $variable->set('deviceDetect', DetectVariable::class);

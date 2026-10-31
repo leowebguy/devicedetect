@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## 3.2.0 - 2026.10.31
+### Added
+- Compatibility with PHP ^8.2 || ^8.3 || ^8.4 || ^8.5 and Craft CMS ^5.0.0
+- PHPStan strict static analysis configuration (`phpstan.neon`) at Level 8
+
+### Changed
+- Added strict return type to plugin initialization (`Detect::init(): void`)
+- Modernized closure signatures and event bindings
+- Formatted codebase to PSR-12 standard via Laravel Pint
+- Updated `composer.json` metadata (`authors`, `extra` properties, dev scripts)
+
 ## 3.1 - 2024.11.22
 ### + mobiledetectlib ^4.8
 
